@@ -20,7 +20,7 @@ class Ares(athena: ActorRef) extends Actor {
   }
 }
 
-// Simple actors that stops itself when a message is received
+// Simple actor that stops itself when a message is received
 class Athena extends Actor {
   def receive = {
     case msg =>

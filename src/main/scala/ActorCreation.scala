@@ -1,5 +1,3 @@
-//import MusicController._
-import MusicController.{Play, Stop}
 import MusicPlayer.{StartMusic, StopMusic}
 import akka.actor.{Actor, ActorRef, ActorSystem, Props}
 
@@ -16,6 +14,7 @@ object MusicController {
 
 // Music Controller
 class MusicController extends Actor {
+  import MusicController._
 
   def receive = {
     case Play =>
@@ -35,6 +34,8 @@ object MusicPlayer {
 }
 
 class MusicPlayer extends Actor {
+  import MusicController._
+
   def receive = {
     case StopMusic =>
       println("I don't want to stop music")
